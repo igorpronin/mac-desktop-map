@@ -31,9 +31,18 @@ The version lives in ONE place: `Sources/DeskMap/Version.swift` (`AppInfo.versio
 **Every functional change MUST bump the version** (semver: patch for fixes,
 minor for features). Never ship a functional change with an unchanged version.
 
-Exception (owner's decision): until the FIRST public release the version stays
-frozen at `0.1.0` — do not bump it during pre-release development. The bumping
-rule kicks in from the first release onward.
+The first public release (v0.1.0, 2026-07-18) is out — the bumping rule is
+ACTIVE. Every version bump MUST, in the same commit, also update:
+
+1. `CHANGELOG.md` — a new entry describing the changes (Keep a Changelog
+   format, with the release link at the bottom of the file);
+2. the "Current version" line in BOTH `README.md` and `README.ru.md`.
+
+Release procedure: bump + changelog + readme → commit & push → `git tag vX.Y.Z`
+→ push the tag → `./build-app.sh` (public) → `ditto -c -k --keepParent
+build/DeskMap.app dist/DeskMap.zip` → verify `strings` show no dev/private
+data → `gh release create vX.Y.Z dist/DeskMap.zip` → rebuild `-dev` back into
+build/ and relaunch (dist/ is gitignored; the zip ships only via Releases).
 
 ## Temporary files
 

@@ -2,6 +2,8 @@
 
 **English** | [Русский](README.ru.md)
 
+Current version: **0.1.0** — see [Releases](../../releases) and the [CHANGELOG](CHANGELOG.md).
+
 <img src="docs/icon.png" width="96" align="right" alt="DeskMap icon">
 
 A tiny macOS utility that always shows **which desktop (Space) you are on** — the desktop number in a small floating window and in the menu bar. Click the window to give the desktop your own name.
