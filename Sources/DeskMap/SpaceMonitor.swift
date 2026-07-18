@@ -244,6 +244,17 @@ final class SpaceMonitor: ObservableObject {
         editing = false
     }
 
+    // Только для оффскрин-рендера скриншотов README (scripts/make-screenshots.sh):
+    // подставляет фейковое состояние, реальные данные не участвуют.
+    func setScreenshotState(number: Int, name: String?) {
+        current = SpaceInfo(number: number, uuid: "SCREENSHOT", isFullscreen: false)
+        if let name {
+            names["SCREENSHOT"] = name
+        } else {
+            names.removeValue(forKey: "SCREENSHOT")
+        }
+    }
+
     // MARK: - Дисплеи
 
     private static func displayUUID(_ screen: NSScreen) -> String? {

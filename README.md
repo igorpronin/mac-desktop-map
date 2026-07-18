@@ -8,6 +8,14 @@ A tiny macOS utility that always shows **which desktop (Space) you are on** — 
 
 Made for one simple purpose: when you juggle many desktops, a permanent, glanceable label of "where am I" — with names that mean something to you ("Mail", "Code", "Music") instead of bare numbers.
 
+## What it looks like
+
+| Normal | Compact | Contrast | Number only |
+|:---:|:---:|:---:|:---:|
+| <img src="docs/screenshot-normal.png" width="111" alt="Floating window: number badge and desktop name"> | <img src="docs/screenshot-compact.png" width="139" alt="Compact window: number as plain text, long name clipped"> | <img src="docs/screenshot-contrast.png" width="111" alt="Contrast mode: white background, dark text"> | <img src="docs/screenshot-number-only.png" width="82" alt="Number only: just the desktop number"> |
+
+The semi-transparent floating window over a desktop; the same number lives in the menu bar. Screenshots are rendered offscreen with fake data by `scripts/make-screenshots.sh` — no real desktop content involved.
+
 ## Features
 
 - **Floating window** — a small semi-transparent pill that stays on top of all windows, on every desktop, even over fullscreen apps. Drag it anywhere; the position is remembered.
